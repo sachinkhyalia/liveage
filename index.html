@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Khyalia / FBS</title>
+
+    <style>
+      body {
+        background-color: #ffffff;
+        font-family: "Inter", sans-serif;
+        line-height: 1.4;
+        padding: 0 10px;
+        margin: 50px auto;
+        max-width: 650px;
+        text-align: left;
+        font-weight: 400;
+        color: #000000;
+      }
+      #age-counter {
+        font-size: 30px;
+        font-weight: 400;
+        /* margin: 20px; */
+      }
+      a {
+        color: rgb(18, 159, 240);
+      }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 style="font-weight: 600">Sachin Khyalia / FBS</h1>
+    <hr />
+    <p style="font-size: 16px">
+      Suffering from an incurable disease- Aging. All of us are suffering, yet
+      we are unaware of it.
+    </p>
+
+    <p style="font-size: 16px">
+      Building
+      <a href="https://inthenics.com">Inthenics</a> to slow down my aging
+      process.
+    </p>
+    <p>&quot;Less Trust, More Truth&quot;</p>
+    <br />
+
+    <div id="age-counter">
+      Chronological Age- <span id="age">0.00000000000000000000</span> years
+    </div>
+
+    <script>
+      function updateAge() {
+        const birthday = new Date("2004-12-27");
+        const currentDate = new Date();
+        const ageInMilliseconds = currentDate - birthday;
+        const ageInSeconds = ageInMilliseconds / 1000;
+        const ageInYears = ageInSeconds / (60 * 60 * 24 * 365.25);
+        const ageWithDecimal = ageInYears.toFixed(9);
+        document.getElementById("age").textContent = ageWithDecimal;
+        requestAnimationFrame(updateAge);
+      }
+
+      updateAge();
+    </script>
+  </body>
+</html>
